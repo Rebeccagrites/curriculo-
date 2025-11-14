@@ -200,3 +200,27 @@ html {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
     50% { transform: translateY(-20px) rotate(180deg); }
 }
+/* ... (Mantenha todos os estilos existentes) ... */
+
+/* Estilos Adicionais para a Seção de Contato */
+.contact-list {
+    list-style: none; /* Remove marcadores padrão da lista */
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.contact-list li {
+    background: rgba(255, 255, 255, 0.05); /* Um fundo mais sutil */
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.2s ease;
+}
+
+.contact-list li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
