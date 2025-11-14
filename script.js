@@ -124,3 +124,15 @@ if (window.elementSdk) {
         mapToEditPanelValues
     });
 }
+constdefaultConfig = {
+    // ... (configurações existentes) ...
+    curso_2: "Ensino Médio Técnico em Desenvolvimento de Sistemas",
+    experiencia_texto: "Buscando oportunidade para iniciar carreira profissional e aplicar conhecimentos adquiridos",
+    // NOVAS CONFIGURAÇÕES DE CONTATO
+    contato_email: "rebecca.grites@email.com",
+    contato_telefone: "(00) 98765-4321",
+    contato_endereco: "Cidade Exemplo, Estado",
+    // ... (configurações de cor existentes) ...
+    background_color: "#1e3a8a", 
+    // ...
+};
