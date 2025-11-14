@@ -19,6 +19,15 @@ html {
     padding: 2rem;
 }
 
+/* Estilos de Paginação (importante para o JS) */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
 .header {
     text-align: center;
     margin-bottom: 3rem;
@@ -93,18 +102,20 @@ html {
     gap: 1rem;
 }
 
-.skill-item {
+.skill-item, .course-item {
     background: rgba(255, 255, 255, 0.1);
     padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.skill-item:hover {
+.skill-item:hover, .course-item:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .skill-icon {
@@ -112,7 +123,28 @@ html {
     margin-bottom: 0.5rem;
 }
 
-.course-item, .experience-item {
+.course-item {
+    text-align: left;
+    margin-bottom: 1rem;
+    border-left: 4px solid rgba(255, 255, 255, 0.5);
+}
+
+.course-item:hover {
+    border-left-color: #ffffff;
+}
+
+.course-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.course-description {
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+.experience-item {
     background: rgba(255, 255, 255, 0.1);
     padding: 1.5rem;
     border-radius: 10px;
@@ -121,21 +153,130 @@ html {
     transition: all 0.3s ease;
 }
 
-.course-item:hover, .experience-item:hover {
+.experience-item:hover {
     background: rgba(255, 255, 255, 0.15);
     border-left-color: #ffffff;
 }
 
-.course-title, .experience-title {
+.experience-title {
     font-weight: 600;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
 
-.course-description, .experience-description {
+.experience-description {
     opacity: 0.9;
     font-size: 0.95rem;
 }
+
+/* ESTILOS PARA CONTATO (NOVO) */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.contact-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.contact-value {
+    opacity: 0.9;
+}
+/* FIM ESTILOS PARA CONTATO */
+
+
+/* ESTILOS PARA PÁGINAS DE DETALHES */
+.back-button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.detail-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.detail-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.detail-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin: 1.5rem 0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.image-placeholder:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.click-hint {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+/* FIM ESTILOS DE DETALHES */
 
 @media (max-width: 768px) {
     .container {
@@ -150,11 +291,12 @@ html {
         padding: 1.5rem;
     }
     
-    .skills-grid {
+    .skills-grid, .contact-grid {
         grid-template-columns: 1fr;
     }
 }
 
+/* Animação de fundo */
 .floating-elements {
     position: fixed;
     top: 0;
@@ -199,28 +341,4 @@ html {
 @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
     50% { transform: translateY(-20px) rotate(180deg); }
-}
-/* ... (Mantenha todos os estilos existentes) ... */
-
-/* Estilos Adicionais para a Seção de Contato */
-.contact-list {
-    list-style: none; /* Remove marcadores padrão da lista */
-    padding: 0;
-    margin-top: 1rem;
-}
-
-.contact-list li {
-    background: rgba(255, 255, 255, 0.05); /* Um fundo mais sutil */
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.5rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: background 0.2s ease;
-}
-
-.contact-list li:hover {
-    background: rgba(255, 255, 255, 0.1);
 }
