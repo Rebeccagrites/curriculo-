@@ -1,6 +1,9 @@
 const defaultConfig = {
     nome_completo: "Rebecca Grites",
     titulo_profissional: "Estudante de Desenvolvimento de Sistemas",
+    email: "rebecca.grites@email.com",
+    telefone: "(11) 99999-9999",
+    endereco: "São Paulo, SP",
     habilidade_1: "Comunicativa",
     habilidade_2: "Resiliente", 
     habilidade_3: "Trabalha bem em equipe",
@@ -14,9 +17,29 @@ const defaultConfig = {
     hover_color: "rgba(255, 255, 255, 0.2)"
 };
 
+// Funções de navegação de página
+function showHomePage() {
+    document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+    document.getElementById('home-page').classList.add('active');
+}
+
+function showSkillDetail(skill) {
+    document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+    document.getElementById('skill-' + skill).classList.add('active');
+}
+
+function showCourseDetail(course) {
+    document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+    document.getElementById('course-' + course).classList.add('active');
+}
+
+// Função de atualização de configuração (SDK)
 async function onConfigChange(config) {
     const nomeElement = document.getElementById('nome-completo');
     const tituloElement = document.getElementById('titulo-profissional');
+    const emailElement = document.getElementById('email');
+    const telefoneElement = document.getElementById('telefone');
+    const enderecoElement = document.getElementById('endereco');
     const habilidade1Element = document.getElementById('habilidade-1');
     const habilidade2Element = document.getElementById('habilidade-2');
     const habilidade3Element = document.getElementById('habilidade-3');
@@ -26,6 +49,11 @@ async function onConfigChange(config) {
 
     if (nomeElement) nomeElement.textContent = config.nome_completo || defaultConfig.nome_completo;
     if (tituloElement) tituloElement.textContent = config.titulo_profissional || defaultConfig.titulo_profissional;
+    // Novos campos de contato
+    if (emailElement) emailElement.textContent = config.email || defaultConfig.email;
+    if (telefoneElement) telefoneElement.textContent = config.telefone || defaultConfig.telefone;
+    if (enderecoElement) enderecoElement.textContent = config.endereco || defaultConfig.endereco;
+    
     if (habilidade1Element) habilidade1Element.textContent = config.habilidade_1 || defaultConfig.habilidade_1;
     if (habilidade2Element) habilidade2Element.textContent = config.habilidade_2 || defaultConfig.habilidade_2;
     if (habilidade3Element) habilidade3Element.textContent = config.habilidade_3 || defaultConfig.habilidade_3;
@@ -40,12 +68,10 @@ async function onConfigChange(config) {
     const accentColor = config.accent_color || defaultConfig.accent_color;
     const hoverColor = config.hover_color || defaultConfig.hover_color;
 
-    // O código original possui um gradiente de cores fixo, exceto para o ponto inicial (0%).
-    // Para manter a funcionalidade original de `onConfigChange`, replicamos a lógica de gradiente.
     document.body.style.background = `linear-gradient(135deg, ${backgroundColor} 0%, #1e40af 50%, #3b82f6 100%)`;
     document.body.style.color = textColor;
 
-    const sections = document.querySelectorAll('.section, .skill-item, .course-item, .experience-item');
+    const sections = document.querySelectorAll('.section, .skill-item, .course-item, .experience-item, .contact-item, .detail-content');
     sections.forEach(section => {
         section.style.background = surfaceColor;
         section.style.borderColor = accentColor;
@@ -106,6 +132,9 @@ function mapToEditPanelValues(config) {
     return new Map([
         ["nome_completo", config.nome_completo || defaultConfig.nome_completo],
         ["titulo_profissional", config.titulo_profissional || defaultConfig.titulo_profissional],
+        ["email", config.email || defaultConfig.email],
+        ["telefone", config.telefone || defaultConfig.telefone],
+        ["endereco", config.endereco || defaultConfig.endereco],
         ["habilidade_1", config.habilidade_1 || defaultConfig.habilidade_1],
         ["habilidade_2", config.habilidade_2 || defaultConfig.habilidade_2],
         ["habilidade_3", config.habilidade_3 || defaultConfig.habilidade_3],
@@ -124,15 +153,3 @@ if (window.elementSdk) {
         mapToEditPanelValues
     });
 }
-constdefaultConfig = {
-    // ... (configurações existentes) ...
-    curso_2: "Ensino Médio Técnico em Desenvolvimento de Sistemas",
-    experiencia_texto: "Buscando oportunidade para iniciar carreira profissional e aplicar conhecimentos adquiridos",
-    // NOVAS CONFIGURAÇÕES DE CONTATO
-    contato_email: "rebecca.grites@email.com",
-    contato_telefone: "(00) 98765-4321",
-    contato_endereco: "Cidade Exemplo, Estado",
-    // ... (configurações de cor existentes) ...
-    background_color: "#1e3a8a", 
-    // ...
-};
