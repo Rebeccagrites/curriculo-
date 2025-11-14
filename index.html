@@ -17,70 +17,154 @@
    <div class="floating-circle"></div>
   </div>
   <div class="container">
-   <header class="header">
-    <div class="photo-placeholder">
-     📸
-    </div>
-    <h1 class="name" id="nome-completo">Rebecca Grites</h1>
-    <p class="title" id="titulo-profissional">Estudante de Desenvolvimento de Sistemas</p>
-   </header>
-   <main>
-    <section class="section">
-     <h2 class="section-title"><span class="section-icon">💪</span> Habilidades</h2>
-     <div class="skills-grid">
-      <div class="skill-item">
-       <div class="skill-icon">
-        🗣️
+   <div id="home-page" class="page active">
+    <header class="header">
+     <div class="photo-placeholder">
+      📸
+     </div>
+     <h1 class="name" id="nome-completo">Rebecca Grites</h1>
+     <p class="title" id="titulo-profissional">Estudante de Desenvolvimento de Sistemas</p>
+    </header>
+    <main>
+     <section class="section">
+      <h2 class="section-title"><span class="section-icon">💪</span> Habilidades</h2>
+      <div class="skills-grid">
+       <div class="skill-item" onclick="showSkillDetail('comunicativa')">
+        <div class="skill-icon">
+         🗣️
+        </div>
+        <h3 id="habilidade-1">Comunicativa</h3>
+        <p class="click-hint">Clique para saber mais</p>
        </div>
-       <h3 id="habilidade-1">Comunicativa</h3>
-      </div>
-      <div class="skill-item">
-       <div class="skill-icon">
-        🌟
+       <div class="skill-item" onclick="showSkillDetail('resiliente')">
+        <div class="skill-icon">
+         🌟
+        </div>
+        <h3 id="habilidade-2">Resiliente</h3>
+        <p class="click-hint">Clique para saber mais</p>
        </div>
-       <h3 id="habilidade-2">Resiliente</h3>
-      </div>
-      <div class="skill-item">
-       <div class="skill-icon">
-        🤝
+       <div class="skill-item" onclick="showSkillDetail('equipe')">
+        <div class="skill-icon">
+         🤝
+        </div>
+        <h3 id="habilidade-3">Trabalha bem em equipe</h3>
+        <p class="click-hint">Clique para saber mais</p>
        </div>
-       <h3 id="habilidade-3">Trabalha bem em equipe</h3>
       </div>
-     </div>
-    </section>
-    <section class="section">
-     <h2 class="section-title"><span class="section-icon">🎓</span> Formação</h2>
-     <div class="course-item">
-      <h3 class="course-title" id="curso-1">Guarda Mirim</h3>
-      <p class="course-description">Programa de formação cidadã e desenvolvimento pessoal</p>
-     </div>
-     <div class="course-item">
-      <h3 class="course-title" id="curso-2">Ensino Médio Técnico em Desenvolvimento de Sistemas</h3>
-      <p class="course-description">Cursando - Formação técnica em programação e desenvolvimento</p>
-     </div>
-    </section>
-    <section class="section">
-     <h2 class="section-title"><span class="section-icon">💼</span> Experiência</h2>
-     <div class="experience-item">
-      <h3 class="experience-title">Primeiro Emprego</h3>
-      <p class="experience-description" id="experiencia-texto">Buscando oportunidade para iniciar carreira profissional e aplicar conhecimentos adquiridos</p>
-     </div>
-    </section>
-   </main>
-  </div>
-  <script src="script.js"></script>
- </body>
-</html>
-</section>
-    <section class="section">
-     <h2 class="section-title"><span class="section-icon">📞</span> Contato</h2>
-     <ul class="contact-list">
-      <li id="contato-email">📧 E-mail: rebeccarupelgrites@email.com</li>
-      <li id="contato-telefone">📱 Telefone: (41) 99507-8426
-      <li id="contato-endereco">📍 Endereço:Major Sezino Pereira de Souza 129, Araucária, Paraná
-     </ul>
-    </section>
+     </section>
+     <section class="section">
+      <h2 class="section-title"><span class="section-icon">🎓</span> Formação</h2>
+      <div class="course-item" onclick="showCourseDetail('guarda-mirim')">
+       <h3 class="course-title" id="curso-1">Guarda Mirim</h3>
+       <p class="course-description">Programa de formação cidadã e desenvolvimento pessoal</p>
+       <p class="click-hint">Clique para saber mais</p>
+      </div>
+      <div class="course-item" onclick="showCourseDetail('ensino-medio')">
+       <h3 class="course-title" id="curso-2">Ensino Médio Técnico em Desenvolvimento de Sistemas</h3>
+       <p class="course-description">Cursando - Formação técnica em programação e desenvolvimento</p>
+       <p class="click-hint">Clique para saber mais</p>
+      </div>
+     </section>
+     <section class="section">
+      <h2 class="section-title"><span class="section-icon">💼</span> Experiência</h2>
+      <div class="experience-item">
+       <h3 class="experience-title">Primeiro Emprego</h3>
+       <p class="experience-description" id="experiencia-texto">Buscando oportunidade para iniciar carreira profissional e aplicar conhecimentos adquiridos</p>
+      </div>
+     </section>
+     <section class="section">
+      <h2 class="section-title"><span class="section-icon">📞</span> Contato</h2>
+      <div class="contact-grid">
+       <div class="contact-item">
+        <div class="contact-icon">
+         📧
+        </div>
+        <div class="contact-label">
+         Email
+        </div>
+        <div class="contact-value" id="email">
+         rebecca.grites@email.com
+        </div>
+       </div>
+       <div class="contact-item">
+        <div class="contact-icon">
+         📱
+        </div>
+        <div class="contact-label">
+         Telefone
+        </div>
+        <div class="contact-value" id="telefone">
+         (11) 99999-9999
+        </div>
+       </div>
+       <div class="contact-item">
+        <div class="contact-icon">
+         📍
+        </div>
+        <div class="contact-label">
+         Endereço
+        </div>
+        <div class="contact-value" id="endereco">
+         São Paulo, SP
+        </div>
+       </div>
+      </div>
+     </section>
     </main>
+   </div>
+   <div id="skill-comunicativa" class="page">
+    <button class="back-button" onclick="showHomePage()"> ← Voltar ao Portfólio </button>
+    <div class="detail-content">
+     <h1 class="detail-title">🗣️ Comunicativa</h1>
+     <p class="detail-description">Possuo excelentes habilidades de comunicação, sendo capaz de expressar ideias de forma clara e objetiva. Tenho facilidade para me adaptar a diferentes públicos e situações, sempre mantendo uma postura profissional e respeitosa. Acredito que a comunicação eficaz é fundamental para o sucesso em qualquer área, especialmente no desenvolvimento de sistemas, onde é necessário traduzir necessidades técnicas para diferentes stakeholders.</p>
+     <p class="detail-description">Durante minha formação, desenvolvi essa habilidade através de apresentações, trabalhos em grupo e participação ativa em discussões. Sei ouvir atentamente, fazer perguntas pertinentes e fornecer feedback construtivo, sempre buscando o melhor resultado para a equipe.</p>
+    </div>
+   </div>
+   <div id="skill-resiliente" class="page">
+    <button class="back-button" onclick="showHomePage()"> ← Voltar ao Portfólio </button>
+    <div class="detail-content">
+     <h1 class="detail-title">🌟 Resiliente</h1>
+     <p class="detail-description">A resiliência é uma das minhas principais características. Encaro desafios como oportunidades de crescimento e aprendizado. Quando me deparo com obstáculos, mantenho a calma e busco soluções criativas, sempre com uma atitude positiva e determinada.</p>
+     <p class="detail-description">No contexto da programação e desenvolvimento de sistemas, essa habilidade é essencial para lidar com bugs, problemas complexos e prazos apertados. Não desisto facilmente e sempre procuro alternativas quando o primeiro caminho não funciona. Vejo cada erro como uma lição valiosa que me torna uma profissional mais preparada.</p>
+    </div>
+   </div>
+   <div id="skill-equipe" class="page">
+    <button class="back-button" onclick="showHomePage()"> ← Voltar ao Portfólio </button>
+    <div class="detail-content">
+     <h1 class="detail-title">🤝 Trabalha bem em equipe</h1>
+     <p class="detail-description">Acredito firmemente no poder da colaboração. Tenho facilidade para trabalhar em equipe, contribuindo com minhas ideias e também valorizando as contribuições dos colegas. Sei que os melhores resultados surgem quando pessoas com diferentes habilidades e perspectivas trabalham juntas em direção a um objetivo comum.</p>
+     <p class="detail-description">Durante minha formação, participei de diversos projetos em grupo onde pude desenvolver habilidades de liderança, mediação de conflitos e divisão de tarefas. Entendo a importância de cada membro da equipe e sempre busco criar um ambiente colaborativo e produtivo, onde todos se sintam valorizados e motivados a dar o seu melhor.</p>
+    </div>
+   </div>
+   <div id="course-guarda-mirim" class="page">
+    <button class="back-button" onclick="showHomePage()"> ← Voltar ao Portfólio </button>
+    <div class="detail-content">
+     <h1 class="detail-title">🛡️ Guarda Mirim</h1>
+     <div class="image-placeholder">
+      🖼️
+      <div style="position: absolute; bottom: 10px; font-size: 0.9rem; opacity: 0.7;">
+       Espaço para foto do programa
+      </div>
+     </div>
+     <p class="detail-description">O programa Guarda Mirim foi fundamental para minha formação pessoal e profissional. Durante este período, desenvolvi valores importantes como disciplina, responsabilidade, cidadania e trabalho em equipe. O programa ofereceu uma base sólida de conhecimentos sobre direitos e deveres, ética e moral.</p>
+     <p class="detail-description">Através das atividades do programa, aprendi sobre liderança, organização e a importância do comprometimento com objetivos coletivos. Essas experiências moldaram meu caráter e me prepararam para os desafios da vida profissional, ensinando-me a valorizar o trabalho em equipe e a responsabilidade social.</p>
+    </div>
+   </div>
+   <div id="course-ensino-medio" class="page">
+    <button class="back-button" onclick="showHomePage()"> ← Voltar ao Portfólio </button>
+    <div class="detail-content">
+     <h1 class="detail-title">💻 Ensino Médio Técnico em Desenvolvimento de Sistemas</h1>
+     <div class="image-placeholder">
+      🖼️
+      <div style="position: absolute; bottom: 10px; font-size: 0.9rem; opacity: 0.7;">
+       Espaço para foto da escola/laboratório
+      </div>
+     </div>
+     <p class="detail-description">Atualmente cursando o Ensino Médio Técnico em Desenvolvimento de Sistemas, onde estou adquirindo conhecimentos sólidos em programação, análise de sistemas, banco de dados e desenvolvimento web. O curso combina teoria e prática, proporcionando uma formação completa na área de tecnologia.</p>
+     <p class="detail-description">Durante o curso, tenho contato com diversas linguagens de programação, metodologias de desenvolvimento, ferramentas de versionamento e boas práticas de programação. Além disso, desenvolvo projetos práticos que simulam situações reais do mercado de trabalho, preparando-me para os desafios da área de desenvolvimento de sistemas.</p>
+     <p class="detail-description"><strong>Principais disciplinas:</strong> Lógica de Programação, Desenvolvimento Web, Banco de Dados, Análise e Projeto de Sistemas, Programação Orientada a Objetos, Engenharia de Software e Gestão de Projetos.</p>
+    </div>
+   </div>
   </div>
   <script src="script.js"></script>
  </body>
